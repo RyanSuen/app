@@ -1,0 +1,44 @@
+//
+   Created by xieruiluo on 16/3/1.
+
+extends layout
+
+block content
+    div.container
+        div.page-header.text-center
+            h1 Madam Suen
+        div.row
+            div.col-lg-6.col-sm-8.col-xs-12.col-lg-offset-3.col-sm-offset-2
+                div.panel.panel-info
+                    div.panel-heading user login
+                    div.panel-body.text-success
+                        form(method="post",action="/api/login")
+                            div.form-group
+                                label(for='email') email
+                                input.form-control#email(type='email',name='email',placeholder='input your email')
+                            div.form-group
+                                label(for='password') password
+                                input.form-control#password(type='password',name='password',placeholder='input your password')
+                            div.text-right
+                                a(href='/password') forgot your password ?
+                                br
+                                br
+                            div.row
+                                div.col-lg-6.col-sm-6.col-md-6.col-xs-6.text-center
+                                    button.btn.btn-success submit
+                                div.col-lg-6.col-sm-6.col-md-6.col-xs-6.text-center
+                                    button.btn.btn-default reset
+                        //input#date-picker(type='text')
+
+    //script(src='/javascripts/jquery.datepicker/jquery.js')
+    //script(src='/javascripts/jquery.datepicker/jquery.datetimepicker.js')
+    //script.
+        $('#date-picker').datetimepicker({
+            format: 'Y.m.d H:i',
+            defaultDate: new Date(2016,1,4),
+            //value: 'abcdeft',
+            value: '2015.2.5 12:00',
+            defaultSelect: false
+        });
+
+
